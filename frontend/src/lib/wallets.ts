@@ -95,6 +95,12 @@ export async function collectWallets(
   return options;
 }
 
+export async function requestWalletAccounts(provider: Eip1193Provider): Promise<string[]> {
+  const authorized = await provider.request({method: "eth_accounts"}) as string[];
+  if (authorized?.[0]) return authorized;
+  return await provider.request({method: "eth_requestAccounts"}) as string[];
+}
+
 export async function ensureStudionet(provider: Eip1193Provider): Promise<void> {
   try {
     await provider.request({

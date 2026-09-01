@@ -6,7 +6,7 @@ import {CheckCircle2, ExternalLink, LogOut, RefreshCw, Search, ShieldCheck, Wall
 
 import {configuredContractAddress, FinalityUnverifiedError, FinalizedExecutionError, readCase, transactionExplorerUrl, writeAndFinalize, type Address, type CanonicalCase} from "../lib/contract";
 import {normalizeLifecycle, type Lifecycle} from "../lib/lifecycle";
-import {collectWallets, ensureStudionet, type WalletOption} from "../lib/wallets";
+import {collectWallets, ensureStudionet, requestWalletAccounts, type WalletOption} from "../lib/wallets";
 
 type Discover = () => Promise<WalletOption[]>;
 type ProbeRpc = () => Promise<{ok: boolean; chainId: number}>;
@@ -67,7 +67,7 @@ export function TrialignApp({discover, probeRpc}: {discover?: Discover; probeRpc
 
   async function connect(wallet: WalletOption) {
     try {
-      const result = await wallet.provider.request({method: "eth_requestAccounts"}) as string[];
+      const result = await requestWalletAccounts(wallet.provider);
       if (!result?.[0]) throw new Error("The wallet returned no account.");
       await ensureStudionet(wallet.provider);
       setSelectedWallet(wallet);

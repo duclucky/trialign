@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 
-import { collectWallets, ensureStudionet } from "./wallets";
+import { collectWallets, ensureStudionet, requestWalletAccounts } from "./wallets";
 
 
 function provider(accounts: string[] = ["0x1111111111111111111111111111111111111111"]) {
@@ -12,6 +12,42 @@ function provider(accounts: string[] = ["0x1111111111111111111111111111111111111
 
 
 describe("wallet discovery", () => {
+  it("reuses an already-authorized account without asking OKX for permission again", async () => {
+    const request = vi.fn(async ({method}: {method: string}) => {
+      if (method === "eth_accounts") {
+        return ["0x1111111111111111111111111111111111111111"];
+      }
+      if (method === "eth_requestAccounts") {
+        throw Object.assign(new Error("User denied request signature."), {code: 4001});
+      }
+      return null;
+    });
+
+    await expect(requestWalletAccounts({request})).resolves.toEqual([
+      "0x1111111111111111111111111111111111111111",
+    ]);
+    expect(request).toHaveBeenCalledTimes(1);
+    expect(request).toHaveBeenCalledWith({method: "eth_accounts"});
+  });
+
+  it("requests permission when the wallet has no authorized account", async () => {
+    const request = vi.fn(async ({method}: {method: string}) => {
+      if (method === "eth_accounts") return [];
+      if (method === "eth_requestAccounts") {
+        return ["0x2222222222222222222222222222222222222222"];
+      }
+      return null;
+    });
+
+    await expect(requestWalletAccounts({request})).resolves.toEqual([
+      "0x2222222222222222222222222222222222222222",
+    ]);
+    expect(request.mock.calls.map(([args]) => args.method)).toEqual([
+      "eth_accounts",
+      "eth_requestAccounts",
+    ]);
+  });
+
   it("collects EIP-6963 announcements and injected fallbacks without auto-selecting", async () => {
     const scope = new EventTarget() as EventTarget & Record<string, unknown>;
     const announced = provider();
