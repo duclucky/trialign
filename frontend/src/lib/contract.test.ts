@@ -2,10 +2,18 @@ import {beforeEach, describe, expect, it, vi} from "vitest";
 
 const {createClient} = vi.hoisted(() => ({createClient: vi.fn()}));
 vi.mock("genlayer-js", () => ({createClient}));
-vi.mock("genlayer-js/chains", () => ({studionet: {id: 61999}}));
+vi.mock("genlayer-js/chains", () => ({studionet: {
+  id: 61999,
+  rpcUrls: {default: {http: ["https://studio.genlayer.com/api"]}},
+}}));
 vi.mock("genlayer-js/types", () => ({TransactionStatus: {ACCEPTED: "ACCEPTED", FINALIZED: "FINALIZED"}}));
 
-import {FinalityUnverifiedError, FinalizedExecutionError, writeAndFinalize} from "./contract";
+import {
+  createTrialignClients,
+  FinalityUnverifiedError,
+  FinalizedExecutionError,
+  writeAndFinalize,
+} from "./contract";
 
 const address = "0x1111111111111111111111111111111111111111" as const;
 const hash = "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
@@ -14,6 +22,27 @@ describe("contract lifecycle wrapper", () => {
   beforeEach(() => {
     vi.clearAllMocks();
     vi.stubEnv("NEXT_PUBLIC_TRIALIGN_CONTRACT_ADDRESS", "0x2222222222222222222222222222222222222222");
+  });
+
+  it("keeps the wallet RPC chain isolated from the same-origin read endpoint", () => {
+    const provider = {request: vi.fn()};
+    createClient.mockImplementation((config: {
+      chain: {rpcUrls: {default: {http: string[]}}};
+      endpoint?: string;
+      provider?: unknown;
+    }) => {
+      // genlayer-js 1.1.8 mutates chain.rpcUrls when endpoint is present.
+      if (config.endpoint) config.chain.rpcUrls.default.http = [config.endpoint];
+      return config.provider ? {writeContract: vi.fn()} : {readContract: vi.fn()};
+    });
+
+    createTrialignClients(provider, address);
+
+    const readConfig = createClient.mock.calls[0][0];
+    const writeConfig = createClient.mock.calls[1][0];
+    expect(readConfig.chain).not.toBe(writeConfig.chain);
+    expect(readConfig.chain.rpcUrls.default.http).toEqual(["/api/genlayer"]);
+    expect(writeConfig.chain.rpcUrls.default.http).toEqual(["https://studio.genlayer.com/api"]);
   });
 
   it.each([

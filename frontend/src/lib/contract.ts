@@ -39,6 +39,19 @@ export class FinalityUnverifiedError extends Error {
 
 const endpoint = process.env.NEXT_PUBLIC_GENLAYER_READ_ENDPOINT || "/api/genlayer";
 
+function isolatedStudionetChain() {
+  return {
+    ...studionet,
+    rpcUrls: {
+      ...studionet.rpcUrls,
+      default: {
+        ...studionet.rpcUrls.default,
+        http: [...studionet.rpcUrls.default.http],
+      },
+    },
+  };
+}
+
 export function configuredContractAddress(): Address | null {
   const value = process.env.NEXT_PUBLIC_TRIALIGN_CONTRACT_ADDRESS;
   return value && /^0x[0-9a-fA-F]{40}$/.test(value) ? value as Address : null;
@@ -48,9 +61,11 @@ export function createTrialignClients(
   provider?: Eip1193Provider,
   account?: Address,
 ) {
-  const read = createClient({chain: studionet, endpoint});
+  // genlayer-js 1.1.8 rewrites chain.rpcUrls in place when endpoint is set.
+  // Separate chain objects keep the read proxy from leaking into wallet preflight traffic.
+  const read = createClient({chain: isolatedStudionetChain(), endpoint});
   const write = provider && account
-    ? createClient({chain: studionet, account, provider})
+    ? createClient({chain: isolatedStudionetChain(), account, provider})
     : null;
   return {read, write};
 }
