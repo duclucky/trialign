@@ -1,0 +1,41 @@
+{
+  "schema": "trialign-release-readiness/1.0",
+  "verifiedAt": "2026-09-01T16:04:17.6926904Z",
+  "targetForgePhase": "SUBMISSION_READY",
+  "readinessGates": {
+    "publicRepository": "PASS",
+    "successfulPublicCi": "PASS",
+    "productionFrontend": "PASS",
+    "studioContractExplorer": "PASS",
+    "freshUserHowToWalkthrough": "PASS",
+    "browserWalletCreate": "PASS",
+    "browserWalletAttach": "PASS",
+    "browserWalletAdjudicate": "PASS",
+    "canonicalReloadAfterFinality": "PASS",
+    "explorerLinksChecked": "PASS",
+    "disconnectDisablesWrites": "PASS",
+    "honestSemanticBoundary": "PASS",
+    "copyReadyPortalFields": "PASS"
+  },
+  "blockers": [],
+  "canonicalLiveOutcome": {
+    "caseId": "trialign-review-260901-c",
+    "semanticResult": "UNVERIFIABLE",
+    "safeReason": "semantic output unavailable",
+    "state": "PUBLICATION_ATTACHED",
+    "canAdvanceReporting": false,
+    "retryAvailable": true
+  },
+  "evidence": {
+    "browserLifecycle": "docs/evidence/studionet/browser-lifecycle.r2.json",
+    "listingReview": "docs/evidence/local/listing-review.json",
+    "localVerification": "docs/evidence/local/verification.json",
+    "portalFields": "docs/PORTAL-FIELDS.md"
+  },
+  "limitations": [
+    "The live adjudication was UNVERIFIABLE and does not prove a PASS or REVIEW_REQUIRED semantic result.",
+    "No Portal submission, Portal acceptance, adoption, or production-readiness claim is made."
+  ],
+  "finalPortalSubmitRequiresActionTimeAuthorization": true,
+  "portalSubmitPerformed": false
+}

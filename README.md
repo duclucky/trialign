@@ -10,7 +10,7 @@ First time here? Follow the copy-ready [How to try walkthrough](docs/PORTAL-FIEL
 
 - Live app: https://trialign.vercel.app/
 - Public repository: https://github.com/duclucky/trialign
-- Successful CI: https://github.com/duclucky/trialign/actions/runs/33520078310
+- Successful CI: https://github.com/duclucky/trialign/actions/runs/33526460225
 
 ## Current verified status
 
@@ -19,10 +19,10 @@ First time here? Follow the copy-ready [How to try walkthrough](docs/PORTAL-FIEL
 - Contract: [`0xbA8246955bBf41aA5DB5BF2d087C7Df6Fa16DE36`](https://explorer-studio.genlayer.com/address/0xbA8246955bBf41aA5DB5BF2d087C7Df6Fa16DE36)
 - Deployment: [`0xb846…c0b`](https://explorer-studio.genlayer.com/tx/0xb8461a9954184c2cf3618041a8613ef73d080b97535f43354d073ede45b38c0b), `FINALIZED`, `MAJORITY_AGREE`
 - Contract surface: 14 public methods — 4 writes and 10 views
-- Automated checks: 78 tests — 39 Python/direct, 12 deployment/parser, and 27 frontend
-- Demonstrated canonical consequence: `CANCELLED` after a finalized baseline lock; the reporting gate remained closed
+- Automated checks: 80 tests — 39 Python/direct, 12 deployment/parser, and 29 frontend
+- Demonstrated browser consequence: finalized `UNVERIFIABLE` adjudication preserved `PUBLICATION_ATTACHED`, kept the reporting gate closed, and retained a safe retry path
 
-The current evidence proves deployment, validator-consensus baseline retrieval, requester-only cancellation, canonical reads, a hosted production frontend, successful public CI, and one browser-signed finalized baseline lock. It does not yet claim a complete browser attachment/adjudication walkthrough, a live PubMed semantic `PASS`/`REVIEW_REQUIRED` result, adoption, or Portal acceptance.
+The current evidence proves deployment, validator-consensus baseline retrieval, requester-only cancellation, canonical reads, a hosted production frontend, successful public CI, and a browser-wallet Create → Attach → Adjudicate walkthrough with canonical reloads and disconnect verification. The live adjudication was safely `UNVERIFIABLE`; it does not claim a semantic `PASS`/`REVIEW_REQUIRED` result, adoption, Portal submission, or Portal acceptance.
 
 ## Contract lifecycle
 
@@ -83,6 +83,7 @@ For authorized, resumable Studionet operations, `npm run network:preflight`, `np
 - [`docs/evidence/studionet/deployment.json`](docs/evidence/studionet/deployment.json) — sanitized deployment evidence
 - [`docs/evidence/studionet/lifecycle.json`](docs/evidence/studionet/lifecycle.json) — sanitized finalized lifecycle and consequence
 - [`docs/evidence/studionet/browser-local.json`](docs/evidence/studionet/browser-local.json) — browser-local RPC, wallet, canonical-read, and disconnect boundary
+- [`docs/evidence/studionet/browser-lifecycle.r2.json`](docs/evidence/studionet/browser-lifecycle.r2.json) — sanitized production browser-wallet Create, Attach, Adjudicate, canonical consequence, Explorer-link, and disconnect evidence
 
 ## Reuse value
 

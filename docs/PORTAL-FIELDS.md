@@ -1,6 +1,6 @@
 # Portal fields — reviewer-ready draft
 
-The public repository, successful CI run, production frontend, and Studio contract are live. Final submission remains blocked until the fresh-user browser walkthrough evidence is complete and the user authorizes the Portal Submit action in the authenticated session.
+The public repository, successful CI run, production frontend, Studio contract, and fresh-user browser walkthrough evidence are live. The listing is ready for review; final Portal Submit still requires explicit action-time authorization in the authenticated session.
 
 ## Title
 
@@ -37,7 +37,7 @@ Preview — deployed on GenLayer Studio.
 7. Watch the status move through **Submitted**, **Accepted**, and a positively verified **Finalized** result. Confirm the canonical panel reloads to `BASELINE_LOCKED` and the NCT is `NCT05340465`.
 8. In **PMID**, enter `41430711`, select **Attach publication**, approve it, and again wait for positive finality and the canonical reload.
 9. Select **Adjudicate**, approve the transaction, and wait for validators to retrieve the fixed PubMed BioC record and compare all four registered primary outcomes.
-10. Read the canonical result after finalization: `REPORTING_COMPLETE` opens the reporting gate; `REVIEW_REQUIRED` keeps it closed; `PUBLICATION_ATTACHED` with a retry message means the public evidence was `UNVERIFIABLE` and no terminal claim was made.
+10. Read the canonical result after finalization: `REPORTING_COMPLETE` opens the reporting gate; `REVIEW_REQUIRED` keeps it closed; `PUBLICATION_ATTACHED` after a finalized adjudication is the non-terminal `UNVERIFIABLE` path, so no terminal claim was made and retry remains available.
 11. Open the displayed Explorer link for every submitted transaction and confirm the contract address matches `0xbA8246955bBf41aA5DB5BF2d087C7Df6Fa16DE36`.
 12. Use **Reload canonical case** once more. Browser status text or a transaction hash is not the result; the reloaded contract state is.
 13. Open the connected account menu and select **Disconnect**. Confirm all four write controls become disabled.
@@ -52,7 +52,7 @@ https://trialign.vercel.app/
 
 ## Successful CI
 
-https://github.com/duclucky/trialign/actions/runs/33520078310
+https://github.com/duclucky/trialign/actions/runs/33526460225
 
 ## Primary contract
 
@@ -64,14 +64,14 @@ https://explorer-studio.genlayer.com/tx/0xb8461a9954184c2cf3618041a8613ef73d080b
 
 ## Finalized lifecycle evidence
 
-Repository path: `docs/evidence/studionet/lifecycle.json`
+Repository paths: `docs/evidence/studionet/lifecycle.json` and `docs/evidence/studionet/browser-lifecycle.r2.json`
 
-The current evidence proves a validator-consensus baseline lock followed by the requester-only `CANCELLED` consequence. The reporting gate remained closed. It does not claim a PubMed semantic verdict or browser-signed write.
+The script-signed evidence proves a validator-consensus baseline lock followed by requester-only `CANCELLED`. The production browser evidence proves wallet-signed Create → Attach → Adjudicate, positive execution finality, canonical reloads, Explorer links, and disconnect. The live adjudication recorded `UNVERIFIABLE` with safe reason `semantic output unavailable`; canonical state remained `PUBLICATION_ATTACHED` and the gate stayed closed.
 
 ## Exact counts
 
 - Contract methods: 14 total — 4 writes and 10 views.
-- Automated tests: 78 total — 39 Python/direct, 12 deployment/parser, and 27 frontend.
+- Automated tests: 80 total — 39 Python/direct, 12 deployment/parser, and 29 frontend.
 
 ## What validators inspect
 
@@ -79,7 +79,7 @@ Validators independently retrieve the exact ClinicalTrials.gov NCT record and NC
 
 ## Finalized consequence
 
-Contract code accepts only exact, non-duplicated outcome coverage and allowed verdict/discrepancy classes. `PASS` alone opens the canonical reporting-complete gate. `REVIEW_REQUIRED` keeps it closed; `UNVERIFIABLE` is non-penalizing and retryable. The demonstrated finalized consequence is `CANCELLED`, with the gate closed.
+Contract code accepts only exact, non-duplicated outcome coverage and allowed verdict/discrepancy classes. `PASS` alone opens the canonical reporting-complete gate. `REVIEW_REQUIRED` keeps it closed; `UNVERIFIABLE` is non-penalizing and retryable. The demonstrated browser-wallet adjudication finalized successfully and resolved to `UNVERIFIABLE`: canonical state remained `PUBLICATION_ATTACHED`, the gate stayed closed, and retry remained available.
 
 ## Reuse value
 
@@ -87,4 +87,4 @@ The project is reusable as a pattern for prospective public-evidence commitments
 
 ## Honest limitations
 
-Trialign does not determine misconduct, clinical validity, regulatory or legal compliance, publication quality, journal acceptance, private-manuscript content, universal PubMed coverage, adoption, or production readiness. A browser-signed baseline lock is finalized, but the attachment/adjudication walkthrough is still being verified. The current evidence does not claim a live semantic `PASS`/`REVIEW_REQUIRED` result, Portal submission, Portal acceptance, or user adoption.
+Trialign does not determine misconduct, clinical validity, regulatory or legal compliance, publication quality, journal acceptance, private-manuscript content, universal PubMed coverage, adoption, or production readiness. The verified live PubMed adjudication was `UNVERIFIABLE`, not `PASS` or `REVIEW_REQUIRED`. The current evidence does not claim reporting completion, Portal submission, Portal acceptance, or user adoption.

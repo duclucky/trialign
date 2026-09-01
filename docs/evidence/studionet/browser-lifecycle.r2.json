@@ -1,0 +1,93 @@
+{
+  "schema": "trialign-browser-lifecycle-evidence/1.0",
+  "revision": 2,
+  "previousRevision": "docs/evidence/studionet/browser-lifecycle.r1.json",
+  "network": "Studionet",
+  "chainId": 61999,
+  "productionUrl": "https://trialign.vercel.app/",
+  "walletProvider": "OKX Wallet",
+  "accountAddress": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+  "contractAddress": "0xbA8246955bBf41aA5DB5BF2d087C7Df6Fa16DE36",
+  "caseId": "trialign-review-260901-c",
+  "nctId": "NCT05340465",
+  "pmid": "41430711",
+  "createTransaction": {
+    "transactionHash": "0x22c5299963611b2b7426ff8866c25dbefd6c3331f09d4ce41dfacec92381bccb",
+    "status": "FINALIZED",
+    "executionResult": "SUCCESS",
+    "acceptedObserved": true,
+    "valueGen": 0,
+    "explorerUrl": "https://explorer-studio.genlayer.com/tx/0x22c5299963611b2b7426ff8866c25dbefd6c3331f09d4ce41dfacec92381bccb",
+    "createdAt": "2026-09-01T21:16:30.77381+07:00"
+  },
+  "canonicalAfterCreate": {
+    "exists": true,
+    "state": "BASELINE_LOCKED",
+    "nctId": "NCT05340465",
+    "pmid": null,
+    "canAdvanceReporting": false
+  },
+  "attachTransaction": {
+    "transactionHash": "0x2c1bca3808b4d162baefc189d10f23c5f7969e7ec6bcd0a8a2c8dbaef7353077",
+    "status": "FINALIZED",
+    "executionResult": "SUCCESS",
+    "acceptedObserved": true,
+    "valueGen": 0,
+    "explorerUrl": "https://explorer-studio.genlayer.com/tx/0x2c1bca3808b4d162baefc189d10f23c5f7969e7ec6bcd0a8a2c8dbaef7353077",
+    "createdAt": "2026-09-01T22:47:08.278828+07:00"
+  },
+  "canonicalAfterAttach": {
+    "state": "PUBLICATION_ATTACHED",
+    "nctId": "NCT05340465",
+    "pmid": "41430711",
+    "publicationDigest": null,
+    "canAdvanceReporting": false
+  },
+  "adjudicateTransaction": {
+    "transactionHash": "0x0dca2a56bd516b6f68a4ae2490a45df87f48821ad2d959f4375eaa5badab819c",
+    "status": "FINALIZED",
+    "executionResult": "SUCCESS",
+    "acceptedObserved": true,
+    "valueGen": 0,
+    "explorerUrl": "https://explorer-studio.genlayer.com/tx/0x0dca2a56bd516b6f68a4ae2490a45df87f48821ad2d959f4375eaa5badab819c",
+    "createdAt": "2026-09-01T23:00:39.538828+07:00"
+  },
+  "semanticResult": {
+    "verdict": "UNVERIFIABLE",
+    "attemptCount": 1,
+    "safeReason": "semantic output unavailable",
+    "canonicalConsequence": "PUBLICATION_ATTACHED",
+    "retryAvailable": true
+  },
+  "canonicalAfterAdjudicate": {
+    "state": "PUBLICATION_ATTACHED",
+    "nctId": "NCT05340465",
+    "pmid": "41430711",
+    "publicationDigest": "1719ccbb64eeea21f8769e8dda3518352dd39f6bce9f0eb88f36f10bb0cc977b",
+    "canAdvanceReporting": false
+  },
+  "freshUserChecks": {
+    "rpcVerified": true,
+    "explicitWalletSelection": true,
+    "submittedAcceptedFinalizedStatesObserved": true,
+    "canonicalReloadedAfterEveryFinalizedWrite": true,
+    "allExplorerLinksHttp200": true,
+    "disconnectCompleted": true,
+    "allWriteControlsDisabledAfterDisconnect": true
+  },
+  "verifiedAt": "2026-09-01T16:04:17.6926904Z",
+  "claims": {
+    "browserWalletSigned": true,
+    "createFinalized": true,
+    "attachFinalized": true,
+    "adjudicateFinalized": true,
+    "canonicalStateReloaded": true,
+    "fullBrowserLifecycleCompleted": true,
+    "terminalSemanticVerdictClaimed": false
+  },
+  "supportBoundaries": [
+    "Only allowlisted transaction, identity, method-result, canonical state, and HTTP-status fields are retained.",
+    "The adjudication execution finalized successfully, but semantic evidence was UNVERIFIABLE; the contract kept PUBLICATION_ATTACHED, kept the gate closed, and preserved a safe retry path.",
+    "This record does not claim PASS, REVIEW_REQUIRED, reporting completion, Portal submission, Portal acceptance, adoption, or production readiness."
+  ]
+}

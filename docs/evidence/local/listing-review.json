@@ -1,6 +1,6 @@
 {
   "schema": "trialign-listing-review/1.0",
-  "verifiedAt": "2026-09-01T13:59:56.0297531Z",
+  "verifiedAt": "2026-09-01T16:04:17.6926904Z",
   "listing": {
     "name": "Trialign",
     "category": "Projects",
@@ -23,20 +23,41 @@
     "inAppBrowserNoWalletStateVerified": true,
     "chromeWalletsDetected": ["OKX Wallet", "MetaMask"],
     "explicitMetaMaskSelectionCompleted": true,
-    "demoCaseId": "trialign-review-260901-b",
-    "demoCaseInitialCanonicalState": "EMPTY",
-    "fullBrowserWalletLifecycleCompleted": false
+    "productionUrl": "https://trialign.vercel.app/",
+    "productionHttpStatus": 200,
+    "walletProvider": "OKX Wallet",
+    "walletAccount": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+    "demoCaseId": "trialign-review-260901-c",
+    "createFinalized": true,
+    "attachFinalized": true,
+    "adjudicateFinalized": true,
+    "semanticResult": "UNVERIFIABLE",
+    "canonicalConsequence": "PUBLICATION_ATTACHED",
+    "reportingGateOpen": false,
+    "disconnectCompleted": true,
+    "writesDisabledAfterDisconnect": true,
+    "fullBrowserWalletLifecycleCompleted": true
   },
   "explorer": {
     "contractUrl": "https://explorer-studio.genlayer.com/address/0xbA8246955bBf41aA5DB5BF2d087C7Df6Fa16DE36",
     "contractHttpStatus": 200,
     "deploymentUrl": "https://explorer-studio.genlayer.com/tx/0xb8461a9954184c2cf3618041a8613ef73d080b97535f43354d073ede45b38c0b",
-    "deploymentHttpStatus": 200
+    "deploymentHttpStatus": 200,
+    "createUrl": "https://explorer-studio.genlayer.com/tx/0x22c5299963611b2b7426ff8866c25dbefd6c3331f09d4ce41dfacec92381bccb",
+    "createHttpStatus": 200,
+    "attachUrl": "https://explorer-studio.genlayer.com/tx/0x2c1bca3808b4d162baefc189d10f23c5f7969e7ec6bcd0a8a2c8dbaef7353077",
+    "attachHttpStatus": 200,
+    "adjudicateUrl": "https://explorer-studio.genlayer.com/tx/0x0dca2a56bd516b6f68a4ae2490a45df87f48821ad2d959f4375eaa5badab819c",
+    "adjudicateHttpStatus": 200
   },
-  "remainingGates": [
-    "User action-time approval is required before the prepared browser wallet transaction is submitted.",
-    "Explicit publishing authorization is required before creating the public GitHub repository or Vercel deployment.",
-    "Public repository, successful CI, production frontend, and finalized browser-wallet lifecycle links must replace listing placeholders before SUBMISSION_READY."
-  ],
+  "publicRelease": {
+    "repositoryUrl": "https://github.com/duclucky/trialign",
+    "repositoryHttpStatus": 200,
+    "successfulCiUrl": "https://github.com/duclucky/trialign/actions/runs/33526460225",
+    "successfulCiHttpStatus": 200,
+    "productionDeploymentId": "dpl_DteChV2H4Z2qi33aAL9yQkC34Lhg"
+  },
+  "remainingReadinessGates": [],
+  "finalPortalSubmitRequiresActionTimeAuthorization": true,
   "portalSubmitPerformed": false
 }
