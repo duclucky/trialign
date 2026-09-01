@@ -1,0 +1,21 @@
+{
+  "schema": "trialign-reviewer-demo-inputs/1.0",
+  "retrievedAt": "2026-09-01T13:54:00Z",
+  "nctId": "NCT05340465",
+  "pmid": "41430711",
+  "clinicalTrialsSource": "https://clinicaltrials.gov/api/v2/studies/NCT05340465",
+  "pubmedBiocSource": "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pubmed.cgi/BioC_json/41430711/unicode",
+  "observations": {
+    "sourceNctMatches": true,
+    "primaryCompletionDate": "2027-01-30",
+    "primaryOutcomeCount": 4,
+    "allPrimaryOutcomesHaveMeasureAndTimeFrame": true,
+    "biocDocumentIdMatchesPmid": true,
+    "publicationTextContainsNct": true,
+    "publicationTextLength": 2129
+  },
+  "supportBoundary": [
+    "These observations show that the fixed public inputs currently satisfy Trialign's deterministic source-binding and minimum-shape preconditions.",
+    "They do not predict validator semantic consensus, a PASS result, transaction finality, or a canonical consequence."
+  ]
+}

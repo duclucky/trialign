@@ -1,0 +1,42 @@
+{
+  "schema": "trialign-listing-review/1.0",
+  "verifiedAt": "2026-09-01T13:59:56.0297531Z",
+  "listing": {
+    "name": "Trialign",
+    "category": "Projects",
+    "availability": "Preview",
+    "logoPath": "frontend/public/trialign-logo.svg",
+    "logoSha256": "0d968de49d5a02ead3c62d1fed3ec406912d2a4c58db14e6a3dfc34a7d771486",
+    "oneLinerPresent": true,
+    "audiencePurposeAndReuseDescriptionPresent": true,
+    "freshUserSteps": 13,
+    "verifiedDemoInputs": "docs/evidence/studionet/reviewer-demo-inputs.json"
+  },
+  "browser": {
+    "localProductionOrigin": "http://localhost:3100",
+    "rpcVerified": true,
+    "consoleErrorsOrWarnings": 0,
+    "logoLoaded": true,
+    "logoIntrinsicAspect": "square",
+    "mobileViewportWidth": 375,
+    "horizontalOverflowObserved": false,
+    "inAppBrowserNoWalletStateVerified": true,
+    "chromeWalletsDetected": ["OKX Wallet", "MetaMask"],
+    "explicitMetaMaskSelectionCompleted": true,
+    "demoCaseId": "trialign-review-260901-b",
+    "demoCaseInitialCanonicalState": "EMPTY",
+    "fullBrowserWalletLifecycleCompleted": false
+  },
+  "explorer": {
+    "contractUrl": "https://explorer-studio.genlayer.com/address/0xbA8246955bBf41aA5DB5BF2d087C7Df6Fa16DE36",
+    "contractHttpStatus": 200,
+    "deploymentUrl": "https://explorer-studio.genlayer.com/tx/0xb8461a9954184c2cf3618041a8613ef73d080b97535f43354d073ede45b38c0b",
+    "deploymentHttpStatus": 200
+  },
+  "remainingGates": [
+    "User action-time approval is required before the prepared browser wallet transaction is submitted.",
+    "Explicit publishing authorization is required before creating the public GitHub repository or Vercel deployment.",
+    "Public repository, successful CI, production frontend, and finalized browser-wallet lifecycle links must replace listing placeholders before SUBMISSION_READY."
+  ],
+  "portalSubmitPerformed": false
+}

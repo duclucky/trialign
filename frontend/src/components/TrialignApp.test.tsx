@@ -6,6 +6,16 @@ import { TrialignApp } from "./TrialignApp";
 
 
 describe("TrialignApp", () => {
+  it("uses the listing logo as an accessible decorative brand asset", () => {
+    const {container} = render(<TrialignApp discover={async () => []} />);
+    const logo = container.querySelector('img[src="/trialign-logo.svg"]');
+
+    expect(logo).toBeInTheDocument();
+    expect(logo).toHaveAttribute("alt", "");
+    expect(logo).toHaveAttribute("width", "40");
+    expect(logo).toHaveAttribute("height", "40");
+  });
+
   it("shows a browser-local Studionet proxy verification", async () => {
     render(<TrialignApp
       discover={async () => []}

@@ -1,6 +1,7 @@
 "use client";
 
 import {useEffect, useState} from "react";
+import Image from "next/image";
 import {CheckCircle2, ExternalLink, LogOut, RefreshCw, Search, ShieldCheck, Wallet} from "lucide-react";
 
 import {configuredContractAddress, FinalityUnverifiedError, FinalizedExecutionError, readCase, writeAndFinalize, type Address, type CanonicalCase} from "../lib/contract";
@@ -129,7 +130,7 @@ export function TrialignApp({discover, probeRpc}: {discover?: Discover; probeRpc
   return <div className="app-shell">
     <header className="topbar">
       <a className="brand" href="#main" aria-label="Trialign home">
-        <span className="brand-mark" aria-hidden="true">T</span>
+        <Image className="brand-mark" src="/trialign-logo.svg" alt="" width={40} height={40} priority/>
         <span><strong>Trialign</strong><small>Outcome concordance</small></span>
       </a>
       <div className={`network-chip ${rpcStatus}`}><span/> Studionet · 61999 · {rpcStatus === "verified" ? "RPC verified" : rpcStatus === "failed" ? "RPC unavailable" : "RPC checking"}</div>

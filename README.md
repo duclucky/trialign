@@ -6,14 +6,16 @@ It locks a public ClinicalTrials.gov primary-outcome baseline before the authori
 
 Trialign does **not** determine misconduct, clinical validity, regulatory or legal compliance, publication quality, or journal acceptance.
 
+First time here? Follow the copy-ready [How to try walkthrough](docs/PORTAL-FIELDS.md#how-to-try) from wallet connection through canonical state and disconnect.
+
 ## Current verified status
 
 - Track: `PROJECTS`
 - Network: GenLayer Studionet, chain ID `61999`
 - Contract: [`0xbA8246955bBf41aA5DB5BF2d087C7Df6Fa16DE36`](https://explorer-studio.genlayer.com/address/0xbA8246955bBf41aA5DB5BF2d087C7Df6Fa16DE36)
-- Deployment: [`0xb846…c0b`](https://explorer-studio.genlayer.com/transactions/0xb8461a9954184c2cf3618041a8613ef73d080b97535f43354d073ede45b38c0b), `FINALIZED`, `MAJORITY_AGREE`
+- Deployment: [`0xb846…c0b`](https://explorer-studio.genlayer.com/tx/0xb8461a9954184c2cf3618041a8613ef73d080b97535f43354d073ede45b38c0b), `FINALIZED`, `MAJORITY_AGREE`
 - Contract surface: 14 public methods — 4 writes and 10 views
-- Automated checks: 67 tests — 32 Python/direct, 12 deployment/parser, and 23 frontend
+- Automated checks: 75 tests — 39 Python/direct, 12 deployment/parser, and 24 frontend
 - Demonstrated canonical consequence: `CANCELLED` after a finalized baseline lock; the reporting gate remained closed
 
 The current network evidence proves deployment, validator-consensus baseline retrieval, requester-only cancellation, and canonical reads. It does not claim a live PubMed semantic adjudication, a `PASS` result, browser-signed writes, hosted production frontend, adoption, or Portal acceptance.
