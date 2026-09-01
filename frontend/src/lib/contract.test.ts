@@ -12,6 +12,7 @@ import {
   createTrialignClients,
   FinalityUnverifiedError,
   FinalizedExecutionError,
+  transactionExplorerUrl,
   writeAndFinalize,
 } from "./contract";
 
@@ -22,6 +23,12 @@ describe("contract lifecycle wrapper", () => {
   beforeEach(() => {
     vi.clearAllMocks();
     vi.stubEnv("NEXT_PUBLIC_TRIALIGN_CONTRACT_ADDRESS", "0x2222222222222222222222222222222222222222");
+  });
+
+  it("uses the canonical Studio explorer transaction route", () => {
+    expect(transactionExplorerUrl(hash)).toBe(
+      `https://explorer-studio.genlayer.com/tx/${hash}`,
+    );
   });
 
   it("keeps the wallet RPC chain isolated from the same-origin read endpoint", () => {

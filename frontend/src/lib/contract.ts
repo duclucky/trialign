@@ -57,6 +57,10 @@ export function configuredContractAddress(): Address | null {
   return value && /^0x[0-9a-fA-F]{40}$/.test(value) ? value as Address : null;
 }
 
+export function transactionExplorerUrl(hash: string): string {
+  return `https://explorer-studio.genlayer.com/tx/${hash}`;
+}
+
 export function createTrialignClients(
   provider?: Eip1193Provider,
   account?: Address,

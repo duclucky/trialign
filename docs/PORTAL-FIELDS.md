@@ -1,6 +1,6 @@
-# Portal fields — publication-blocked draft
+# Portal fields — reviewer-ready draft
 
-This packet is structurally complete but **not submission-ready** until the public repository, successful CI run, production frontend URL, and browser-wallet write lifecycle are available. Replace only the bracketed publication fields from canonical evidence; do not weaken the limitations.
+The public repository, successful CI run, production frontend, and Studio contract are live. Final submission remains blocked until the fresh-user browser walkthrough evidence is complete and the user authorizes the Portal Submit action in the authenticated session.
 
 ## Title
 
@@ -28,7 +28,7 @@ Preview — deployed on GenLayer Studio.
 
 ## How to try
 
-1. Open `[PRODUCTION_FRONTEND_URL_REQUIRED]`. Until it is published, follow the local setup in the repository README and open `http://localhost:3000`.
+1. Open `https://trialign.vercel.app/`.
 2. Install or unlock a compatible EVM wallet such as MetaMask, Rabby, or OKX. The wallet needs enough Studionet GEN for transaction fees; Trialign sends zero GEN to the contract.
 3. Confirm the header says `Studionet · 61999 · RPC verified`. If it says unavailable, stop and retry later rather than submitting a transaction.
 4. Select **Connect wallet**, choose one of the wallets detected in the centered modal, and approve adding or switching to Studionet if your wallet asks.
@@ -44,15 +44,15 @@ Preview — deployed on GenLayer Studio.
 
 ## Public repository
 
-`[PUBLIC_REPOSITORY_URL_REQUIRED]`
+https://github.com/duclucky/trialign
 
 ## Production app
 
-`[PRODUCTION_FRONTEND_URL_REQUIRED]`
+https://trialign.vercel.app/
 
 ## Successful CI
 
-`[SUCCESSFUL_CI_RUN_URL_REQUIRED]`
+https://github.com/duclucky/trialign/actions/runs/33520078310
 
 ## Primary contract
 
@@ -71,7 +71,7 @@ The current evidence proves a validator-consensus baseline lock followed by the 
 ## Exact counts
 
 - Contract methods: 14 total — 4 writes and 10 views.
-- Automated tests: 77 total — 39 Python/direct, 12 deployment/parser, and 26 frontend.
+- Automated tests: 78 total — 39 Python/direct, 12 deployment/parser, and 27 frontend.
 
 ## What validators inspect
 
@@ -87,4 +87,4 @@ The project is reusable as a pattern for prospective public-evidence commitments
 
 ## Honest limitations
 
-Trialign does not determine misconduct, clinical validity, regulatory or legal compliance, publication quality, journal acceptance, private-manuscript content, universal PubMed coverage, adoption, or production readiness. The current evidence does not include a live semantic `PASS`/`REVIEW_REQUIRED` result, a browser-signed transaction, production frontend deployment, successful public CI, Portal submission, or Portal acceptance.
+Trialign does not determine misconduct, clinical validity, regulatory or legal compliance, publication quality, journal acceptance, private-manuscript content, universal PubMed coverage, adoption, or production readiness. A browser-signed baseline lock is finalized, but the attachment/adjudication walkthrough is still being verified. The current evidence does not claim a live semantic `PASS`/`REVIEW_REQUIRED` result, Portal submission, Portal acceptance, or user adoption.

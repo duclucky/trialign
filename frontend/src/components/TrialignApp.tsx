@@ -4,7 +4,7 @@ import {useEffect, useState} from "react";
 import Image from "next/image";
 import {CheckCircle2, ExternalLink, LogOut, RefreshCw, Search, ShieldCheck, Wallet} from "lucide-react";
 
-import {configuredContractAddress, FinalityUnverifiedError, FinalizedExecutionError, readCase, writeAndFinalize, type Address, type CanonicalCase} from "../lib/contract";
+import {configuredContractAddress, FinalityUnverifiedError, FinalizedExecutionError, readCase, transactionExplorerUrl, writeAndFinalize, type Address, type CanonicalCase} from "../lib/contract";
 import {normalizeLifecycle, type Lifecycle} from "../lib/lifecycle";
 import {collectWallets, ensureStudionet, type WalletOption} from "../lib/wallets";
 
@@ -162,7 +162,7 @@ export function TrialignApp({discover, probeRpc}: {discover?: Discover; probeRpc
         <div><small>Transaction</small><strong className={`status ${lifecycle}`}>{lifecycleLabels[lifecycle]}</strong></div>
         <div><small>Contract</small><strong>{address ? shortAddress(address) : "Not configured"}</strong></div>
         <div><small>Canonical gate</small><strong>{canonical?.can_advance_reporting ? "Open" : "Closed"}</strong></div>
-        {txHash && <a href={`https://explorer-studio.genlayer.com/transactions/${txHash}`} target="_blank" rel="noreferrer">View transaction <ExternalLink size={14}/></a>}
+        {txHash && <a href={transactionExplorerUrl(txHash)} target="_blank" rel="noreferrer">View transaction <ExternalLink size={14}/></a>}
       </section>
 
       {message && <div className="notice" role="alert">{message}</div>}

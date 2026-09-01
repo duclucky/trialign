@@ -1,0 +1,40 @@
+{
+  "schema": "trialign-browser-lifecycle-evidence/1.0",
+  "revision": 1,
+  "network": "Studionet",
+  "chainId": 61999,
+  "productionUrl": "https://trialign.vercel.app/",
+  "walletProvider": "OKX Wallet",
+  "accountAddress": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+  "contractAddress": "0xbA8246955bBf41aA5DB5BF2d087C7Df6Fa16DE36",
+  "caseId": "trialign-review-260901-c",
+  "nctId": "NCT05340465",
+  "createTransaction": {
+    "transactionHash": "0x22c5299963611b2b7426ff8866c25dbefd6c3331f09d4ce41dfacec92381bccb",
+    "status": "FINALIZED",
+    "executionResult": "SUCCESS",
+    "consensusResult": "Accepted",
+    "valueGen": 0,
+    "explorerUrl": "https://explorer-studio.genlayer.com/tx/0x22c5299963611b2b7426ff8866c25dbefd6c3331f09d4ce41dfacec92381bccb",
+    "createdAt": "2026-09-01T21:16:30.77381+07:00"
+  },
+  "canonicalAfterCreate": {
+    "exists": true,
+    "state": "BASELINE_LOCKED",
+    "nctId": "NCT05340465",
+    "pmid": null,
+    "canAdvanceReporting": false
+  },
+  "verifiedAt": "2026-09-01T14:39:14.6245786Z",
+  "claims": {
+    "browserWalletSigned": true,
+    "createFinalized": true,
+    "canonicalStateReloaded": true,
+    "fullBrowserLifecycleCompleted": false
+  },
+  "supportBoundaries": [
+    "Only allowlisted transaction, identity, method-result, and canonical state fields are retained.",
+    "This revision proves the browser-signed baseline lock only; publication attachment and adjudication remain pending.",
+    "It does not claim a semantic PASS, REVIEW_REQUIRED, Portal submission, Portal acceptance, or adoption."
+  ]
+}

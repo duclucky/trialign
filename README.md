@@ -8,6 +8,10 @@ Trialign does **not** determine misconduct, clinical validity, regulatory or leg
 
 First time here? Follow the copy-ready [How to try walkthrough](docs/PORTAL-FIELDS.md#how-to-try) from wallet connection through canonical state and disconnect.
 
+- Live app: https://trialign.vercel.app/
+- Public repository: https://github.com/duclucky/trialign
+- Successful CI: https://github.com/duclucky/trialign/actions/runs/33520078310
+
 ## Current verified status
 
 - Track: `PROJECTS`
@@ -15,10 +19,10 @@ First time here? Follow the copy-ready [How to try walkthrough](docs/PORTAL-FIEL
 - Contract: [`0xbA8246955bBf41aA5DB5BF2d087C7Df6Fa16DE36`](https://explorer-studio.genlayer.com/address/0xbA8246955bBf41aA5DB5BF2d087C7Df6Fa16DE36)
 - Deployment: [`0xb846…c0b`](https://explorer-studio.genlayer.com/tx/0xb8461a9954184c2cf3618041a8613ef73d080b97535f43354d073ede45b38c0b), `FINALIZED`, `MAJORITY_AGREE`
 - Contract surface: 14 public methods — 4 writes and 10 views
-- Automated checks: 77 tests — 39 Python/direct, 12 deployment/parser, and 26 frontend
+- Automated checks: 78 tests — 39 Python/direct, 12 deployment/parser, and 27 frontend
 - Demonstrated canonical consequence: `CANCELLED` after a finalized baseline lock; the reporting gate remained closed
 
-The current network evidence proves deployment, validator-consensus baseline retrieval, requester-only cancellation, and canonical reads. It does not claim a live PubMed semantic adjudication, a `PASS` result, browser-signed writes, hosted production frontend, adoption, or Portal acceptance.
+The current evidence proves deployment, validator-consensus baseline retrieval, requester-only cancellation, canonical reads, a hosted production frontend, successful public CI, and one browser-signed finalized baseline lock. It does not yet claim a complete browser attachment/adjudication walkthrough, a live PubMed semantic `PASS`/`REVIEW_REQUIRED` result, adoption, or Portal acceptance.
 
 ## Contract lifecycle
 
