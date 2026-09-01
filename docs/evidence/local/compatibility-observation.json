@@ -1,0 +1,15 @@
+{
+  "schema": "trialign-compatibility-observation/1",
+  "observed_at": "2026-09-01T10:48:00Z",
+  "python": "3.12.13",
+  "genvm_linter": "0.11.0",
+  "genlayer_test": "0.29.2",
+  "contract_runner": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6",
+  "linter_observation": "A newer runner 1zr6nqk597d97kg0dyxg0shhrykx5v02zjgnyrajapy4wlqvfvwh is available.",
+  "decision": "Keep the exact runner currently published by the official contract-structure documentation. A newer hash is not a drop-in upgrade and requires an isolated import/lint/direct/schema/network spike before adoption.",
+  "material_drift": false,
+  "limitations": [
+    "Linter compatibility does not prove target-network availability or semantic stability.",
+    "The newer runner has not been adopted or represented as compatible."
+  ]
+}

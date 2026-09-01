@@ -1,0 +1,56 @@
+{
+  "schema": "trialign-studionet-lifecycle-evidence/1.0",
+  "network": "Studionet",
+  "chainId": 61999,
+  "rpcUrl": "https://studio.genlayer.com/api",
+  "explorerBaseUrl": "https://explorer-studio.genlayer.com",
+  "contractAddress": "0xbA8246955bBf41aA5DB5BF2d087C7Df6Fa16DE36",
+  "caseId": "trialign-demo-20260901",
+  "nctId": "NCT05904028",
+  "createTransaction": {
+    "transactionHash": "0x4753b89b064b50012ffd007679664881b2be7a11ac5a7ad7cfb24851b6bf2387",
+    "status": "FINALIZED",
+    "consensusResult": "MAJORITY_AGREE",
+    "contractAddress": "0xbA8246955bBf41aA5DB5BF2d087C7Df6Fa16DE36"
+  },
+  "cancelTransaction": {
+    "transactionHash": "0x7d1d80833324366624964f4d2fe1aa45757bd2475b85e9bbf24790144b3a9f01",
+    "status": "FINALIZED",
+    "consensusResult": "MAJORITY_AGREE",
+    "contractAddress": "0xbA8246955bBf41aA5DB5BF2d087C7Df6Fa16DE36"
+  },
+  "baselineCanonical": {
+    "exists": true,
+    "state": "BASELINE_LOCKED",
+    "requester": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+    "nctId": "NCT05904028",
+    "primaryCompletionDeadline": 1816905600,
+    "baselineDigest": "8b074e98a0ed85974cf6e98ba4a26a1e267a2f81ab2bea76c9bea01e186f3b34",
+    "policyVersion": 1,
+    "canAdvanceReporting": false
+  },
+  "finalCanonical": {
+    "exists": true,
+    "state": "CANCELLED",
+    "requester": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+    "nctId": "NCT05904028",
+    "primaryCompletionDeadline": 1816905600,
+    "baselineDigest": "8b074e98a0ed85974cf6e98ba4a26a1e267a2f81ab2bea76c9bea01e186f3b34",
+    "policyVersion": 1,
+    "canAdvanceReporting": false
+  },
+  "sourceAuthority": "https://clinicaltrials.gov/api/v2/studies/NCT05904028",
+  "finalizedAt": "2026-09-01T13:08:06.924Z",
+  "verifiedAt": "2026-09-01T13:17:28.802Z",
+  "claims": {
+    "baselineRetrievalConsensusAccepted": true,
+    "finalizedExecution": true,
+    "semanticAdjudicationResult": null,
+    "canonicalConsequence": "CANCELLED",
+    "reportingGateOpen": false
+  },
+  "limitations": [
+    "This is the requester-only cancellation branch after a validator-consensus baseline lock.",
+    "It does not claim a live PubMed semantic adjudication, PASS, REVIEW_REQUIRED, adoption, or browser-signed transaction."
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "schema": "trialign-browser-local-evidence/1.0",
+  "verifiedAt": "2026-09-01T13:11:31.2738700Z",
+  "origin": "http://localhost:3100",
+  "productionBuild": true,
+  "network": "Studionet",
+  "chainId": 61999,
+  "contractAddress": "0xbA8246955bBf41aA5DB5BF2d087C7Df6Fa16DE36",
+  "checks": {
+    "sameOriginRpcHealthDisplayed": "Studionet · 61999 · RPC verified",
+    "browserConsoleErrorsOrWarnings": 0,
+    "walletChooserCenteredAndExplicit": true,
+    "detectedWalletLabels": [
+      "OKX Wallet",
+      "MetaMask"
+    ],
+    "duplicateWalletLabels": false,
+    "automaticProviderSelection": false,
+    "walletConnectionCompleted": true,
+    "connectedAccountDisplay": "0xbd73…d199",
+    "canonicalReadCompleted": true,
+    "canonicalCaseId": "trialign-demo-20260901",
+    "canonicalState": "CANCELLED",
+    "canonicalNctId": "NCT05904028",
+    "canonicalReportingGateOpen": false,
+    "disconnectCompleted": true,
+    "allWriteControlsDisabledAfterDisconnect": true
+  },
+  "proofBoundary": {
+    "browserSignedTransaction": false,
+    "scriptSignedLifecycleEvidence": "docs/evidence/studionet/lifecycle.json",
+    "statement": "This browser record proves provider discovery, explicit selection, network/RPC access, wallet connection, canonical read, and disconnect behavior. It does not claim a browser-signed write."
+  }
+}

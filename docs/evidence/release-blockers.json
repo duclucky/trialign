@@ -1,0 +1,26 @@
+{
+  "schema": "trialign-release-blockers/1.0",
+  "observedAt": "2026-09-01T13:18:03.3010962Z",
+  "forgePhase": "DEPLOYED",
+  "blockers": [
+    {
+      "id": "production-frontend",
+      "evidence": "No production frontend URL or deployment evidence exists; browser-local proof is limited to http://localhost:3100.",
+      "resumeCondition": "Receive explicit publishing authorization, deploy the production frontend against the locked Studionet contract, verify the public URL and same-origin RPC path, and save sanitized production evidence."
+    },
+    {
+      "id": "browser-wallet-write",
+      "evidence": "The browser-local record proves wallet discovery, connection, canonical read, and disconnect, but explicitly records browserSignedTransaction=false.",
+      "resumeCondition": "In a browser with the selected authorized wallet, obtain user approval for one bounded write, wait for accepted and successful finalized consensus, reload canonical state, and save only sanitized evidence."
+    },
+    {
+      "id": "public-repository-and-ci",
+      "evidence": "The selected child repository has no public remote and no successful public CI run URL.",
+      "resumeCondition": "Receive explicit publishing authorization, publish only the hygiene-reviewed child repository, run the checked-in CI workflow successfully, and capture the public repository and CI run links."
+    }
+  ],
+  "portalSubmitPerformed": false,
+  "limitations": [
+    "These blockers prevent EVIDENCE_LOCKED and SUBMISSION_READY. They do not invalidate the finalized Studionet contract deployment or the local verification bundle."
+  ]
+}

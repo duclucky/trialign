@@ -1,0 +1,29 @@
+{
+  "schema": "trialign-deployment-evidence/1.0",
+  "network": "Studionet",
+  "chainId": 61999,
+  "rpcUrl": "https://studio.genlayer.com/api",
+  "explorerBaseUrl": "https://explorer-studio.genlayer.com",
+  "contractAddress": "0xbA8246955bBf41aA5DB5BF2d087C7Df6Fa16DE36",
+  "transactionHash": "0xb8461a9954184c2cf3618041a8613ef73d080b97535f43354d073ede45b38c0b",
+  "transactionStatus": "FINALIZED",
+  "executionResult": null,
+  "consensusResult": "MAJORITY_AGREE",
+  "sourceSha256": "58592865bd38601cd503b0bac0d74ee066aeb5eb8f88d52a8e1a86bdda73fb34",
+  "deployedCodeSha256": "58592865bd38601cd503b0bac0d74ee066aeb5eb8f88d52a8e1a86bdda73fb34",
+  "policyVersion": 1,
+  "emptyCaseSha256": "34b237eea3368aed3845a658074581ed5c47cee5decfd28160afd661f269f23d",
+  "finalizedAt": "2026-09-01T13:01:15.099Z",
+  "verifiedAt": "2026-09-01T13:17:25.463Z",
+  "claims": {
+    "finalizedExecution": true,
+    "consensusAccepted": true,
+    "canonicalViewsReadable": true,
+    "semanticAdjudicationResult": null,
+    "canonicalConsequence": null
+  },
+  "limitations": [
+    "This record proves deployment finality and readable canonical views only.",
+    "A semantic adjudication and its canonical consequence require separate lifecycle evidence."
+  ]
+}

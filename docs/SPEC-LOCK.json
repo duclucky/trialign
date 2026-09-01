@@ -1,0 +1,19 @@
+{
+  "schema": "trialign-spec-lock/1",
+  "locked_at": "2026-09-01T10:34:00Z",
+  "project_slug": "trialign",
+  "track": "PROJECTS",
+  "registry_record_hash": "dab8d5af9bb3edc8aab2c89c7bdd8550e72869894268fae370e7cdad56c6d8a2",
+  "build_handoff_hash": "5fffe95aedce062605a1b7f53d0950369ab17ef9acee22d569203a419488bcc5",
+  "documents": {
+    "CLAIM-TO-CODE.md": "fd41d02812a3906e99c992f727a07b6c49049e895a0106bef4d3c590cf704cca",
+    "COMPATIBILITY-MATRIX.md": "1d7bb17eb89172a3190bad1ceeff0bc3b7a4aa824ff511d844e21b625ed8c5a4",
+    "EVIDENCE-AUTHORITY-MATRIX.md": "1fe82084887a380904cd69f3d9e7c196f27759cfae4d1ee8c0c33235258561de",
+    "IMPLEMENTATION-PLAN.md": "a1251d4e0445d441bb8361876f7e6dcf741d0dcd76bdc15913ea646181b4e80a",
+    "OFFICIAL-ALIGNMENT.md": "d13a299bac06b49885db461dcdc0ac455cd0064db3d3d8c7c0ed584117bc48a4",
+    "SPECIFICATION.md": "0712f8db2bcb24b4273debfc7d32319111f0757c2e0ba171567f020cc49c80de",
+    "VALUE-DESTINATION-MATRIX.md": "5b96f4438ef76f9d4eb1f93ea1ebaf671762e78fb49678128ad6c860d18832ce",
+    "WRITE-METHOD-SAFETY-CARDS.md": "aa5e756b444713eda819b3ab093b126092215a9a4cfb07e4907b14557ec1c21f"
+  },
+  "status": "LOCKED"
+}

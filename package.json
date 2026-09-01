@@ -1,0 +1,23 @@
+{
+  "name": "trialign",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "contract:lint": "\".venv\\Scripts\\genvm-lint.exe\" check contracts/trialign.py",
+    "contract:schema": "\".venv\\Scripts\\genvm-lint.exe\" schema contracts/trialign.py --output docs/abi.json",
+    "network:preflight": "node scripts/deploy.mjs preflight",
+    "network:deploy": "node scripts/deploy.mjs deploy",
+    "network:verify": "node scripts/deploy.mjs verify",
+    "network:lifecycle": "node scripts/run-lifecycle.mjs",
+    "test:python": "\".venv\\Scripts\\python.exe\" -m pytest",
+    "test:deployment": "node --test tests/test_receipts.mjs tests/test_lifecycle_state.mjs",
+    "frontend:test": "npm --prefix frontend run test",
+    "frontend:typecheck": "npm --prefix frontend run typecheck",
+    "frontend:build": "npm --prefix frontend run build",
+    "check": "npm run contract:lint && npm run contract:schema && npm run test:python && npm run test:deployment && npm run frontend:test && npm run frontend:typecheck && npm run frontend:build"
+  },
+  "dependencies": {
+    "dotenv": "17.2.3",
+    "genlayer-js": "1.1.8"
+  }
+}

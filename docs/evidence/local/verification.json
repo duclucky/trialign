@@ -1,0 +1,37 @@
+{
+  "schema": "trialign-local-verification/1.0",
+  "verifiedAt": "2026-09-01T13:23:53.0669961Z",
+  "command": "npm run check",
+  "environment": {
+    "platform": "Windows",
+    "python": "3.12",
+    "networkEvidence": false
+  },
+  "contract": {
+    "recognizedClass": "TrialignContract",
+    "sourceSha256": "58592865bd38601cd503b0bac0d74ee066aeb5eb8f88d52a8e1a86bdda73fb34",
+    "abiSha256": "dc9e29a6ce227052080b6d95bd035bb10080624749ed22a8289b118d6b651b68",
+    "publicMethods": 14,
+    "writeMethods": 4,
+    "viewMethods": 10,
+    "lintPassed": true
+  },
+  "tests": {
+    "pythonDirect": 31,
+    "deploymentAndReceipt": 12,
+    "frontend": 23,
+    "total": 66,
+    "allPassed": true
+  },
+  "frontend": {
+    "typecheckPassed": true,
+    "productionBuildPassed": true
+  },
+  "lockfiles": {
+    "rootSha256": "33b9dfd10401e6c6435e949dae4c687fd93c3042086f8b7f0289dd2eb71a1707",
+    "frontendSha256": "f4b69de3b568af718c15ff0d2e60540e6fdef35d22eaf304a212929e23988989"
+  },
+  "limitations": [
+    "This record is local verification evidence and does not prove target-network behavior, hosted availability, browser-signed writes, repository publication, CI, adoption, or Portal acceptance."
+  ]
+}

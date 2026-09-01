@@ -1,0 +1,12 @@
+{
+  "schema": "trialign-studionet-preflight/1.0",
+  "ok": true,
+  "network": "Studionet",
+  "chainId": 61999,
+  "rpcUrl": "https://studio.genlayer.com/api",
+  "sourceSha256": "58592865bd38601cd503b0bac0d74ee066aeb5eb8f88d52a8e1a86bdda73fb34",
+  "schemaMethodCount": 14,
+  "requiredMethodsPresent": true,
+  "checkedAt": "2026-09-01T10:58:17.709Z",
+  "boundary": "Read-only chain and schema preflight; this is not deployment or lifecycle evidence."
+}

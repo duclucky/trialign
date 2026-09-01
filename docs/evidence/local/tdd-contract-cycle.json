@@ -1,0 +1,25 @@
+{
+  "schema": "trialign-local-evidence/1",
+  "observed_at": "2026-09-01T10:48:00Z",
+  "phase": "BUILDING",
+  "red": {
+    "command": ".venv/Scripts/python.exe -m pytest tests/direct/test_trialign_contract.py -q",
+    "result": "16 failed because contracts/trialign.py did not exist",
+    "boundary": "expected missing implementation"
+  },
+  "debugging": {
+    "finding": "genlayer-test 0.29.2 unlinks a temporary stdin path while fd 0 still holds it on Windows",
+    "evidence": "WinError 32 at gltest.direct.loader._inject_message_to_fd0",
+    "resolution": "project-local tests/conftest.py defers deletion until pytest session finish; installed package is unchanged"
+  },
+  "green": {
+    "command": ".venv/Scripts/python.exe -m pytest tests/test_contract_metadata.py tests/direct/test_trialign_contract.py -q",
+    "result": "25 passed",
+    "lint_command": ".venv/Scripts/genvm-lint.exe check contracts/trialign.py",
+    "lint_result": "Lint passed; Validation passed; TrialignContract; 14 methods (10 view, 4 write)"
+  },
+  "limitations": [
+    "Direct mode and lint are local development evidence, not validator consensus or Studionet evidence.",
+    "The complete aggregate check, frontend, source probes, deployment parser, browser, and network lifecycle remain pending."
+  ]
+}
