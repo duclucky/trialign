@@ -6,10 +6,13 @@ import pytest
 
 
 CONTRACT = Path(__file__).parents[2] / "contracts" / "trialign.py"
+GENVM_RELEASE = "v0.2.16"
 
 
 def deploy(direct_deploy):
-    return direct_deploy(CONTRACT)
+    # This release contains the exact runner hash locked in the contract header.
+    # Pin it so a cold CI cache never follows a newer release without that runner.
+    return direct_deploy(CONTRACT, sdk_version=GENVM_RELEASE)
 
 
 def clinical_trials_body(nct_id="NCT01234567", completion="2030-01-01"):

@@ -71,7 +71,7 @@ The current evidence proves a validator-consensus baseline lock followed by the 
 ## Exact counts
 
 - Contract methods: 14 total — 4 writes and 10 views.
-- Automated tests: 76 total — 39 Python/direct, 12 deployment/parser, and 25 frontend.
+- Automated tests: 77 total — 39 Python/direct, 12 deployment/parser, and 26 frontend.
 
 ## What validators inspect
 

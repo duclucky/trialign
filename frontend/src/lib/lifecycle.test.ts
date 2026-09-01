@@ -41,4 +41,13 @@ describe("transaction lifecycle", () => {
       result_name: "MAJORITY_DISAGREE",
     })).toBe("failed");
   });
+
+  it("normalizes the simplified Studio receipt field names emitted by genlayer-js", () => {
+    expect(normalizeLifecycle({
+      status: 7,
+      status_name: "FINALIZED",
+      result: 6,
+      result_name: "MAJORITY_AGREE",
+    })).toBe("finalized");
+  });
 });

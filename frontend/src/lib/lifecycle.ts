@@ -4,6 +4,7 @@ export function normalizeLifecycle(receipt: unknown): Lifecycle {
   const value = receipt as {
     status?: unknown;
     statusName?: unknown;
+    status_name?: unknown;
     txExecutionResultName?: unknown;
     tx_execution_result_name?: unknown;
     resultName?: unknown;
@@ -14,7 +15,7 @@ export function normalizeLifecycle(receipt: unknown): Lifecycle {
     value?.txExecutionResultName ?? value?.tx_execution_result_name ?? "",
   ).toUpperCase();
   const status = String(
-    value?.statusName ?? value?.status ?? value?.result?.status ?? "",
+    value?.statusName ?? value?.status_name ?? value?.status ?? value?.result?.status ?? "",
   ).toUpperCase();
   const consensus = String(value?.resultName ?? value?.result_name ?? "").toUpperCase();
   if (execution === "FINISHED_WITH_ERROR") return "failed";
