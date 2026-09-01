@@ -1,4 +1,5 @@
 import { createHash } from "node:crypto";
+import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -32,6 +33,29 @@ function sha256(value) {
 
 function utcNow() {
   return new Date().toISOString();
+}
+
+function sourceCommit() {
+  try {
+    return execFileSync("git", ["rev-parse", "HEAD"], {
+      cwd: PROJECT_DIR,
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "ignore"],
+    }).trim();
+  } catch {
+    throw new Error("SOURCE_COMMIT_UNAVAILABLE");
+  }
+}
+
+function runtimeDependency(source) {
+  const firstLine = source.split(/\r?\n/, 1)[0];
+  const match = firstLine.match(/^#\s*(\{.*\})\s*$/);
+  if (!match) throw new Error("RUNTIME_DEPENDENCY_UNAVAILABLE");
+  const depends = JSON.parse(match[1]).Depends;
+  if (typeof depends !== "string" || !depends.startsWith("py-genlayer:")) {
+    throw new Error("RUNTIME_DEPENDENCY_UNAVAILABLE");
+  }
+  return depends;
 }
 
 function writeJson(path, value) {
@@ -82,6 +106,8 @@ function safeFailure(error) {
     "RPC_CHAIN_ID_UNAVAILABLE",
     "SCHEMA_PREFLIGHT_UNAVAILABLE",
     "SCHEMA_METHODS_MISSING",
+    "SOURCE_COMMIT_UNAVAILABLE",
+    "RUNTIME_DEPENDENCY_UNAVAILABLE",
   ]);
   const category = known.has(error?.message) ? error.message : "NETWORK_OR_SDK_FAILURE";
   publicSummary({
@@ -204,8 +230,10 @@ async function verifyDeployment(client, checkpoint, source) {
     transactionStatus: checkpoint.receipt.status,
     executionResult: checkpoint.receipt.executionResult ?? null,
     consensusResult: checkpoint.receipt.consensusResult ?? null,
+    sourceCommit: sourceCommit(),
     sourceSha256: sha256(source),
     deployedCodeSha256: sha256(deployedCode),
+    runtimeDependency: runtimeDependency(source),
     policyVersion: JSON.parse(policyVersionJson),
     emptyCaseSha256,
     finalizedAt: checkpoint.finalizedAt,

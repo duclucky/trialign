@@ -1,6 +1,6 @@
 {
   "schema": "trialign-local-verification/1.0",
-  "verifiedAt": "2026-09-01T13:23:53.0669961Z",
+  "verifiedAt": "2026-09-01T13:27:16.1035056Z",
   "command": "npm run check",
   "environment": {
     "platform": "Windows",
@@ -17,10 +17,10 @@
     "lintPassed": true
   },
   "tests": {
-    "pythonDirect": 31,
+    "pythonDirect": 32,
     "deploymentAndReceipt": 12,
     "frontend": 23,
-    "total": 66,
+    "total": 67,
     "allPassed": true
   },
   "frontend": {
